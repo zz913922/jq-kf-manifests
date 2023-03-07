@@ -30,3 +30,26 @@ data:
       redirectURIs: ["/authservice/oidc/callback"]
       name: 'Dex Login Application'
       secretEnv: OIDC_CLIENT_SECRET
+    connectors:
+      - type: ldap
+        name: OpenLDAP
+        id: ldap
+        config:
+          host: ldap.ipa.jqdomain.com:636
+          insecureNoSSL: false
+          insecureSkipVerify: true
+          usernamePrompt: SSO Username
+          userSearch:
+            baseDN: cn=users,cn=accounts,dc=ipa,dc=jqdomain,dc=com
+            filter: "(objectClass=posixAccount)"
+            username: uid
+            idAttr: DN
+            emailAttr: uid
+            nameAttr: gecos
+          groupSearch:
+            baseDN: cn=groups,cn=accounts,dc=ipa,dc=jqdomain,dc=com
+            filter: "(objectClass=posixGroup)"
+            userMatchers:
+              - userAttr: uid
+                groupAttr: memberUid
+            nameAttr: cn

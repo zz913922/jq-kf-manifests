@@ -19,6 +19,7 @@ spec:
       containers:
         - command:
             - /manager
+            - --enable-gang-scheduling=true
           image: kubeflow/training-operator
           name: training-operator
           ports:

@@ -1,0 +1,44 @@
+- op: replace
+  path: /data/links
+  value: |-
+    {
+      "menuLinks": [
+        {
+          "type": "item",
+          "link": "/jupyter/",
+          "text": "Notebook Servers",
+          "icon": "book"
+        },
+        {
+          "type": "item",
+          "link": "/volumes/",
+          "text": "Volumes",
+          "icon": "device:storage"
+        }
+      ],
+      "externalLinks": [ ],
+        "quickLinks": [
+          {
+            "text": "Create a new Notebook server",
+            "desc": "Notebook Servers",
+            "link": "/jupyter/"
+          }
+        ],
+        "documentationItems": [
+          {
+            "text": "User Dashboards",
+            "desc": "View user dashboards",
+            "link": "http://computing.k8s.saljiut.jqdomain.com/"
+          },
+          {
+            "text": "Getting Started with Nexus",
+            "desc": "Get your workloads running on Nexus",
+            "link": "https://v9kg4fi819.feishu.cn/wiki/ZgTiwXxenifOGZkzAgOcAdsbn3d"
+          },
+          {
+            "text": "Getting Started with Notebook Server",
+            "desc": "Customize and run your notebook servers on Nexus",
+            "link": "https://v9kg4fi819.feishu.cn/wiki/HyPuwixTkiZiYAkDrrNcWTiLnTb"
+          }
+        ]
+    }

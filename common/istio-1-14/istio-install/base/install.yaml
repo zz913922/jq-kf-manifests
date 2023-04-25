@@ -2204,7 +2204,6 @@ data:
               privileged: true
               readOnlyRootFilesystem: {{ ne (annotation .ObjectMeta `sidecar.istio.io/enableCoreDump` .Values.global.proxy.enableCoreDump) "true" }}
               runAsGroup: 1337
-              fsGroup: 1337
               runAsNonRoot: false
               runAsUser: 0
               {{- else }}
@@ -2224,7 +2223,6 @@ data:
               privileged: {{ .Values.global.proxy.privileged }}
               readOnlyRootFilesystem: {{ ne (annotation .ObjectMeta `sidecar.istio.io/enableCoreDump` .Values.global.proxy.enableCoreDump) "true" }}
               runAsGroup: 1337
-              fsGroup: 1337
               {{ if or (eq (annotation .ObjectMeta `sidecar.istio.io/interceptionMode` .ProxyConfig.InterceptionMode) `TPROXY`) (eq (annotation .ObjectMeta `sidecar.istio.io/capNetBindService` .Values.global.proxy.capNetBindService) `true`) -}}
               runAsNonRoot: false
               runAsUser: 0
@@ -2355,10 +2353,6 @@ data:
             {{- range .Values.global.imagePullSecrets }}
             - name: {{ . }}
             {{- end }}
-          {{- end }}
-          {{- if eq (env "ENABLE_LEGACY_FSGROUP_INJECTION" "true") "true" }}
-          securityContext:
-            fsGroup: 1337
           {{- end }}
       gateway: |
         {{- $containers := list }}
@@ -2581,10 +2575,6 @@ data:
             {{- range .Values.global.imagePullSecrets }}
             - name: {{ . }}
             {{- end }}
-          {{- end }}
-          {{- if eq (env "ENABLE_LEGACY_FSGROUP_INJECTION" "true") "true" }}
-          securityContext:
-            fsGroup: 1337
           {{- end }}
       grpc-simple: |
         metadata:
@@ -3230,7 +3220,6 @@ spec:
           name: ingressgateway-ca-certs
           readOnly: true
       securityContext:
-        fsGroup: 1337
         runAsGroup: 1337
         runAsNonRoot: true
         runAsUser: 1337
@@ -3398,8 +3387,6 @@ spec:
         - mountPath: /var/run/secrets/remote
           name: istio-kubeconfig
           readOnly: true
-      securityContext:
-        fsGroup: 1337
       serviceAccountName: istiod
       volumes:
       - emptyDir:

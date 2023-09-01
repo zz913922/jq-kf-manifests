@@ -41,8 +41,8 @@ resources:
 # - ../apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user
 # # Admission Webhook
 # - ../apps/admission-webhook/upstream/overlays/cert-manager
-# # Volumes Web App
-# - ../apps/volumes-web-app/upstream/overlays/istio
+# Volumes Web App
+- ../apps/volumes-web-app/upstream/overlays/istio
 # # Katib
 # - ../apps/katib/upstream/installs/katib-with-kubeflow
 # # Tensorboards Controller

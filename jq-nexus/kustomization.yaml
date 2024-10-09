@@ -30,7 +30,7 @@ resources:
 # Profiles + KFAM
 - ../apps/profiles/upstream/overlays/kubeflow
 # User namespace
-- ../common/user-namespace/base
+# - ../common/user-namespace/base
 
 # # KNative
 # - ../common/knative/knative-serving/overlays/gateways
@@ -42,7 +42,7 @@ resources:
 # # Admission Webhook
 # - ../apps/admission-webhook/upstream/overlays/cert-manager
 # Volumes Web App
-- ../apps/volumes-web-app/upstream/overlays/istio
+# - ../apps/volumes-web-app/upstream/overlays/istio
 # # Katib
 # - ../apps/katib/upstream/installs/katib-with-kubeflow
 # # Tensorboards Controller

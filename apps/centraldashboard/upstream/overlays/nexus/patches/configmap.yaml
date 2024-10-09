@@ -8,12 +8,6 @@
           "link": "/jupyter/",
           "text": "Notebook Servers",
           "icon": "book"
-        },
-        {
-          "type": "item",
-          "link": "/volumes/",
-          "text": "Volumes",
-          "icon": "device:storage"
         }
       ],
       "externalLinks": [ ],

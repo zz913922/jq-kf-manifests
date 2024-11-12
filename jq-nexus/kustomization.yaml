@@ -6,25 +6,25 @@ resources:
 - ../common/cert-manager/cert-manager/base
 - ../common/cert-manager/kubeflow-issuer/base
 # Istio
-- ../common/istio-1-16/istio-crds/base
-- ../common/istio-1-16/istio-namespace/base
-- ../common/istio-1-16/istio-install/base
+# - ../common/istio-1-16/istio-crds/base
+# - ../common/istio-1-16/istio-namespace/base
+# - ../common/istio-1-16/istio-install/base
 # OIDC Authservice
-- ../common/oidc-authservice/base
+# - ../common/oidc-authservice/base
 # Dex
-- ../common/dex/overlays/istio
+# - ../common/dex/overlays/istio
 # Kubeflow namespace
 - ../common/kubeflow-namespace/base
 # Kubeflow Roles
 - ../common/kubeflow-roles/base
 # Kubeflow Istio Resources
-- ../common/istio-1-16/kubeflow-istio-resources/base
+# - ../common/istio-1-16/kubeflow-istio-resources/base
 
 
 # Central Dashboard
-- ../apps/centraldashboard/upstream/overlays/nexus
+# - ../apps/centraldashboard/upstream/overlays/nexus
 # Jupyter Web App
-- ../apps/jupyter/jupyter-web-app/upstream/overlays/istio
+# - ../apps/jupyter/jupyter-web-app/upstream/overlays/istio
 # Notebook Controller
 - ../apps/jupyter/notebook-controller/upstream/overlays/kubeflow
 # Profiles + KFAM
